@@ -1,0 +1,14 @@
+gh-v1.yaml is a byte copy of examples/gh/gh.yaml from
+github.com/docker/sandbox-kit-spec/v3@v3.0.0-m.11 (Apache-2.0).
+
+The other YAML fixtures are hand edits of that file for the demo:
+- gh-patch.yaml: provides gh@2.103.0 -> gh@2.104.0
+- gh-widen-deny.yaml: runtime deny block removed
+- gh-widen-host.yaml: evil.example.com added to runtime allow
+- gh-widen-priv.yaml: privileged@1 capability added
+- gh-context-only.yaml: agent-context content wording change
+
+oci-v1/ and oci-widen-deny/ hold minimal OCI image manifests whose
+vnd.docker.sandbox.kit.descriptor annotation is the JSON form of the
+matching YAML descriptor. Config and layer digests are placeholders.
+The demo never pulls layers.

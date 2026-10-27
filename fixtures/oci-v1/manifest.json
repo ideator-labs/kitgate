@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "mediaType": "application/vnd.oci.image.manifest.v1+json",
+  "config": {
+    "mediaType": "application/vnd.oci.image.config.v1+json",
+    "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "size": 2
+  },
+  "layers": [
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar",
+      "digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "size": 0
+    }
+  ],
+  "annotations": {
+    "vnd.docker.sandbox.kit.descriptor": "{\"capabilities\":[{\"config\":{\"runtime\":{\"allow\":[\"github.com\",{\"hosts\":[\"api.github.com\"],\"methods\":[\"GET\",\"HEAD\",\"POST\",\"PATCH\",\"PUT\",\"DELETE\"]},{\"hosts\":[\"uploads.github.com\"],\"methods\":[\"POST\",\"PUT\"]}],\"deny\":[{\"hosts\":[\"api.github.com\"],\"methods\":[\"DELETE\"],\"paths\":[\"/repos/**\"]}]}},\"type\":\"com.docker.sandbox/network-policy@2\"},{\"config\":{\"apiKey\":{\"inject\":[{\"domain\":\"api.github.com\",\"format\":\"Bearer %s\",\"header\":\"Authorization\"},{\"domain\":\"uploads.github.com\",\"format\":\"Bearer %s\",\"header\":\"Authorization\"},{\"domain\":\"github.com\",\"format\":\"Bearer %s\",\"header\":\"Authorization\"}],\"name\":\"GH_TOKEN\",\"proxyManaged\":true},\"phase\":[\"runtime\"],\"service\":\"github\"},\"description\":\"GitHub API access for gh\",\"optional\":true,\"type\":\"com.docker.sandbox/credential@1\"},{\"config\":{\"content\":\"# GitHub CLI\\n\\n`gh` is on PATH at `/usr/local/bin/gh`.\\n\\n- Authentication is proxy-managed: `GH_TOKEN` is set to a sentinel and the\\n  real credential is injected on requests to github.com, api.github.com,\\n  and uploads.github.com. Never print or copy the token; it is not the\\n  real value anyway.\\n- Do not run `gh auth login` \u2014 authentication already works.\\n- Prefer `gh` over raw git for GitHub operations: `gh pr create`,\\n  `gh issue list`, `gh run watch`, `gh api` for anything without a\\n  dedicated subcommand.\\n\"},\"optional\":true,\"type\":\"com.docker.sandbox/agent-context@1\"},{\"config\":{\"content\":\"# GitHub CLI\\n\\n`gh` is on PATH at `/usr/local/bin/gh`.\\n\\n- Authentication is proxy-managed: `GH_TOKEN` is set to a sentinel and the\\n  real credential is injected on requests to github.com, api.github.com,\\n  and uploads.github.com. Never print or copy the token; it is not the\\n  real value anyway.\\n- Do not run `gh auth login` \u2014 authentication already works.\\n- Prefer `gh` over raw git for GitHub operations: `gh pr create`,\\n  `gh issue list`, `gh run watch`, `gh api` for anything without a\\n  dedicated subcommand.\\n\"},\"optional\":true,\"type\":\"com.docker.sandbox/agent-context@2\"}],\"description\":\"gh from nixpkgs, pinned by commit, as a self-contained overlay\",\"displayName\":\"GitHub CLI\",\"dockerfile\":\"gh.dockerfile\",\"kind\":\"mixin\",\"licenses\":[\"MIT\"],\"provides\":[\"gh@2.103.0\"],\"schemaVersion\":\"3\",\"sourceUrl\":\"https://github.com/cli/cli\"}",
+    "vnd.docker.sandbox.kit.schema-version": "3"
+  }
+}
