@@ -39,7 +39,7 @@ bash demo.sh                  # expect "RESULT: 9 passed, 0 failed", exit 0
 bash demo.sh --break          # expect "RESULT: 6 passed, 3 failed", exit 1
 ```
 
-Needs Go 1.24+. Tested with Go 1.27.3 on x86_64 Linux. No Docker, QEMU, network, or paid API.
+Needs Go 1.26.10+ (module floor from sandbox-kit-spec). Tested with Go 1.27.3 on x86_64 Linux. No Docker, QEMU, network, or paid API.
 
 ## Design decisions
 

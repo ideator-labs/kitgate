@@ -20,7 +20,7 @@ bash demo.sh          # 9 checks, exit 0
 bash demo.sh --break  # ignores deny-removed; 3 checks fail, exit 1
 ```
 
-Needs Go 1.24+. No Docker daemon, no registry, no paid API.
+Needs Go 1.26.10+ (module floor from sandbox-kit-spec). No Docker daemon, no registry, no paid API.
 
 The fixtures start from the real `examples/gh/gh.yaml` in `github.com/docker/sandbox-kit-spec/v3@v3.0.0-m.11`. That Kit allows GitHub API methods including DELETE, then denies `DELETE /repos/**`. A patch that only bumps `provides` from `gh@2.103.0` to `gh@2.104.0` passes. Dropping the deny fails with:
 
